@@ -466,8 +466,36 @@
   }
 
   /* ---------- SOCIAL LINKS ---------- */
+  .social-label{
+    margin-top:2.6rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.6rem;
+    font-family:'Shippori Mincho',serif;
+    font-weight:600;
+    font-size:1.05rem;
+    letter-spacing:0.08em;
+    color:var(--navy);
+  }
+  .social-label::before,
+  .social-label::after{
+    content:"";
+    width:28px;
+    height:1px;
+    background:var(--gold);
+  }
+  .social-label .arrow{
+    display:inline-block;
+    color:var(--gold);
+    animation:bounce-down 1.6s ease-in-out infinite;
+  }
+  @keyframes bounce-down{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(4px); }
+  }
   .social-links{
-    margin-top:2.4rem;
+    margin-top:1.2rem;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -599,28 +627,28 @@
     <div class="member-messages" id="memberMessages">
       <div class="member-message">
         <div class="member-name">【ひめな（hime）】</div>
-        <p class="message-placeholder">近日公開予定です。来たる日までお待ちください！！</p>
+        <p class="message-placeholder">来たる日までお待ちください。</p>
         <p class="message-content">【メンバー1からのメッセージをここに入れてください。】</p>
       </div>
       <div class="member-message">
         <div class="member-name">【るいと(ruito)】</div>
-        <p class="message-placeholder">近日公開予定です。来たる日までお待ちください！！</p>
+        <p class="message-placeholder">来たる日までお待ちください。</p>
         <p class="message-content">【メンバー2からのメッセージをここに入れてください。】</p>
       </div>
       <div class="member-message">
         <div class="member-name">【のどか】</div>
-        <p class="message-placeholder">近日公開予定です。来たる日までお待ちください！！</p>
+        <p class="message-placeholder">来たる日までお待ちください。</p>
         <p class="message-content">【メンバー3からのメッセージをここに入れてください。】</p>
       </div>
       <div class="member-message">
         <div class="member-name">【ひかり】</div>
-        <p class="message-placeholder">近日公開予定です。来たる日までお待ちください！！</p>
+        <p class="message-placeholder">来たる日までお待ちください。</p>
         <p class="message-content">【メンバー1からのメッセージをここに入れてください。】</p>
       </div>
       <div class="member-message">
         <div class="member-name">【しょうた（Sho-ta）】</div>
-        <p class="message-placeholder">近日公開予定です。来たる日までお待ちください！！</p>
-        <p class="message-content">【Rallyは良かったぞ。最後にこれだけ言わせてくれ！RallyはBIGLOVE…で最高のサークルだったぜ！！！】</p>
+        <p class="message-placeholder">来たる日までお待ちください。</p>
+        <p class="message-content">【まずはこれだけ言いたい。Rallyは良かったぞ。最後にこれだけ言わせてくれ！RallyはBIGLOVE…で最高のサークルだったぜ！！！】</p>
       </div>
     </div>
 
@@ -673,6 +701,7 @@
   <p class="thanks">最高で最後の舞台を皆様にお届けします！</p>
 	<p>当日は盛り上がっていきましょう！！</p>
 
+  <div class="social-label reveal" data-observe>公式SNSはこちら<span class="arrow">↓</span></div>
   <div class="social-links reveal" data-observe>
     <!-- ★各リンクの href="#" の部分を、実際のアカウントURLに置き換えてください -->
     <a href="https://x.com/GUrallydd" target="_blank" rel="noopener noreferrer" aria-label="Xで見る">
@@ -753,7 +782,7 @@
      （それまでは全員「来たる日までお待ちください。」の表示のままです）
   ---------- */
   (function initMemberMessages(){
-    const messagePublishDateStr = '2026-11-12'; // ★メッセージを公開したい日にちに書き換えてください
+    const messagePublishDateStr = '2026-11-15'; // ★メッセージを公開したい日にちに書き換えてください
     const container = document.getElementById('memberMessages');
     if (!container) return;
 
