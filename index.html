@@ -771,9 +771,10 @@
     <nav aria-label="目次">
       <a href="#top" data-section="top"><span class="toc-num">1</span><span class="toc-text"><span class="toc-ja">トップ</span><span class="toc-en">Top</span></span></a>
       <a href="#about" data-section="about"><span class="toc-num">2</span><span class="toc-text"><span class="toc-ja">Relay of Rallyとは</span><span class="toc-en">About</span></span></a>
-      <a href="#message" data-section="message"><span class="toc-num">3</span><span class="toc-text"><span class="toc-ja">メッセージ</span><span class="toc-en">Message</span></span></a>
-      <a href="#info" data-section="info"><span class="toc-num">4</span><span class="toc-text"><span class="toc-ja">公演情報</span><span class="toc-en">Info</span></span></a>
-      <a href="#sns" data-section="sns"><span class="toc-num">5</span><span class="toc-text"><span class="toc-ja">公式SNS</span><span class="toc-en">SNS</span></span></a>
+      <a href="#rally" data-section="rally"><span class="toc-num">3</span><span class="toc-text"><span class="toc-ja">Rallyについて</span><span class="toc-en">Circle</span></span></a>
+      <a href="#message" data-section="message"><span class="toc-num">4</span><span class="toc-text"><span class="toc-ja">メッセージ</span><span class="toc-en">Message</span></span></a>
+      <a href="#info" data-section="info"><span class="toc-num">5</span><span class="toc-text"><span class="toc-ja">公演情報</span><span class="toc-en">Info</span></span></a>
+      <a href="#sns" data-section="sns"><span class="toc-num">6</span><span class="toc-text"><span class="toc-ja">公式SNS</span><span class="toc-en">SNS</span></span></a>
     </nav>
     <div class="toc-menu-footer">Relay of Rally 2026</div>
   </div>
@@ -822,16 +823,33 @@
 また、大学生だけではなく、社会人の方や子どもたち、ゲストの方、そして観客の方と一体となって作り上げる公演会となっています。
 群馬大学ダブルダッチサークルRallyに所属する現役生による引退公演です｡今年最上級生として頑張ってきた私たち３代目による最後のパフォーマンスをぜひご覧ください！
     </p>
+  </div>
+</section>
+
+<div class="divider" data-observe>
+  <svg viewBox="0 0 300 60" aria-hidden="true">
+    <path class="divider-path" d="M10,30 C 90,-10 130,70 150,30 C 170,-10 210,70 290,30"/>
+  </svg>
+</div>
+
+<section class="section about" id="rally">
+  <div class="section-inner reveal" data-observe>
+    <div class="eyebrow">Circle</div>
+    <h2 class="about-heading">Rallyについて</h2>
+    <div class="about-subheading">【群馬大学ダブルダッチサークル Rally】</div>
     <p>
-      ↓↓↓ 去年の引退公演の様子や活動内容などについてはこちらをご覧ください！
+群馬大学ダブルダッチサークルRallyは2022年に設立されました。
+群馬県でダブルダッチの普及を目指し、様々なイベントにてパフォーマンス披露や体験会の開催などの活動をしてきました。
+2024年、群馬県でのダブルダッチシーンをさらに盛り上げるために県内初となるダブルダッチパフォーマンス公演“Relay of Rally"を開催いたしました。
+
+
+
+「Relay」は、ダブルダッチをする人を増やし、次世代へとダブルダッチを繋ぐ。
+
+「Rally」は、”集結”という意味を持つサークル名。
+
+本公演を通じて、ダブルダッチを知っている人や初めて見る人を”集め”、”リレー”のようにダブルダッチを群馬で繋げていく事を目的とし、イベント名を「Relay of Rally」と名付けました。
     </p>
-    <div class="video-frame">
-      <div class="video-placeholder" id="videoPlaceholder">
-        <div class="cs-main">Coming Soon</div>
-        <div class="cs-sub">公演紹介動画は近日公開予定です!!</div>
-      </div>
-      <iframe id="videoIframe" src="" title="公演紹介動画" allowfullscreen style="display:none;"></iframe>
-    </div>
   </div>
 </section>
 
@@ -982,25 +1000,6 @@
     // diffDays < 0（公演翌日以降）の場合は is-visible を付けないので非表示のまま
   })();
 
-  /* ---------- 紹介動画：Coming Soon 表示 ----------
-     動画のURLが決まったら、下の videoSrc に埋め込み用URLを入れてください。
-     例）YouTubeの場合: 'https://www.youtube.com/embed/動画ID'
-     空文字のままなら自動で「Coming Soon」が表示されます。
-  ---------- */
-  (function initVideo(){
-    const videoSrc = ''; // ここに動画の埋め込みURLを入れると自動的に切り替わります
-    const iframe = document.getElementById('videoIframe');
-    const placeholder = document.getElementById('videoPlaceholder');
-    if (!iframe || !placeholder) return;
-
-    if (videoSrc && videoSrc.trim() !== ''){
-      iframe.src = videoSrc;
-      iframe.style.display = 'block';
-      placeholder.style.display = 'none';
-    }
-    // videoSrc が空のままなら Coming Soon 表示を維持
-  })();
-
   /* ---------- メンバーメッセージ：公開日まで「お待ちください」表示 ----------
      公開したい日になったら、下の messagePublishDateStr を書き換えてください。
      その日の 0:00 になった瞬間から、実際のメッセージ本文が表示されます。
@@ -1070,7 +1069,7 @@
     });
 
     // ---- 現在読んでいるセクションをメニュー上でハイライト ----
-    const sectionIds = ['top','about','message','info','sns'];
+    const sectionIds = ['top','about','rally','message','info','sns'];
     const sectionEls = sectionIds
       .map(id => document.getElementById(id))
       .filter(Boolean);
