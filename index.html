@@ -1,1130 +1,983 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relay of Rally 2026 (Relay of Rally2026) | 公式サイト</title>
+    <meta
+      name="description"
+      content="2026年に開催されるRelay of Rallyの公式ページです。Relay of Rally2026に関する最新情報をお届けします。"
+    />
+    <meta name="google-site-verification" content="rBsmCU0--nGHl-4jCkUCMP5bNh6yQlFTx2t_y7rnSKk" />
+    <style>
 
-<!-- 💡最新のGoogle確認コードに書き換えました -->
-<title>Relay of Rally 2026 (Relay of Rally2026) | 公式サイト</title>
-<meta name="description" content="2026年に開催されるRelay of Rallyの公式ページです。Relay of Rally2026に関する最新情報をお届けします。">
-<meta name="google-site-verification" content="rBsmCU0--nGHl-4jCkUCMP5bNh6yQlFTx2t_y7rnSKk" />
+        /* =================================================================
+           白を基本とした明るいデザイン
+      	これ以降は引き継ぎの時のために薄い文字で簡単に取り扱いのようなものを書いていきます。
+      	とはいえ、初代管理者である私もこのプログラムの大半はClaudeっていうAIに任せているため、追加したいものがあればジェミニとか
+      	Claudeとかにこの機能を追加してと頼めば構築してもらえるんでね。僕も見えない部分はつい頼ってしまいがち。
+      	それでももし、既存の機能でわからないとこがあったら聞いてもらえれば時間あれば対応します。
+      	　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+      	　　　　　　　　　　By Relay of Rally HP（HTML方式） 初代管理者　３代目　Sho-ta
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@400;600;800&family=Shippori+Mincho:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
+           ※このファイルはBGM機能を完全に削除したバージョンです。
+           ================================================================= */
+        :root{
+          --navy:#1b2340;   /* メインの暗い文字色（ネイビー） */
+          --plum:#f4edf7;   /* メッセージセクションなどの明るい背景（淡いラベンダー/ピンク系） */
+          --gold:#D49520;   /* メインのアクセントカラー（白背景で見えやすい少し濃いめのゴールド） */
+          --coral:#d64cd6;  /* サブのアクセントカラー（鮮やかなピンク・パープル） */
+          --cream:#ffffff;  /* メインの背景色（純白） */
+          --slate:#64748B;  /* 補足文字色（グレー系、日程の説明など） */
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html{scroll-behavior:smooth;}
+        body{
+          background:var(--cream);
+          color:var(--navy);
+          font-family:'Shippori Mincho',sans-serif;
+          overflow-x:hidden;
+        }
+        @media (prefers-reduced-motion: reduce){
+          *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+        }
 
-  /* =================================================================
-     白を基本とした明るいデザイン
-	これ以降は引き継ぎの時のために薄い文字で簡単に取り扱いのようなものを書いていきます。
-	とはいえ、初代管理者である私もこのプログラムの大半はClaudeっていうAIに任せているため、追加したいものがあればジェミニとか
-	Claudeとかにこの機能を追加してと頼めば構築してもらえるんでね。見えない部分はつい頼ってしまいがち。
-	それでももし、既存の機能でわからないとこがあったら聞いてもらえれば時間あれば対応します。
-	　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
-	　　　　　　　　　　By Relay of Rally HP（HTML方式） 初代管理者　３代目　Sho-ta
+        /* ---------- utility ---------- */
+        .eyebrow{
+          font-family:'Shippori Mincho',sans-serif;
+          font-weight:600;
+          letter-spacing:0.35em;
+          text-transform:uppercase;
+          font-size:0.78rem;
+          color:var(--gold);
+        }
+        .section{
+          padding:7rem 6vw;
+          position:relative;
+        }
+        @media (max-width:640px){
+          .section{padding:5rem 6vw;}
+        }
+        .section-inner{
+          max-width:920px;
+          margin:0 auto;
+        }
+        a:focus-visible, button:focus-visible{
+          outline:2px solid var(--gold);
+          outline-offset:4px;
+        }
 
-     ※このファイルはBGM機能を完全に削除したバージョンです。
-     ================================================================= */
-  :root{
-    --navy:#1b2340;   /* メインの暗い文字色（ネイビー） */
-    --plum:#f4edf7;   /* メッセージセクションなどの明るい背景（淡いラベンダー/ピンク系） */
-    --gold:#D49520;   /* メインのアクセントカラー（白背景で見えやすい少し濃いめのゴールド） */
-    --coral:#d64cd6;  /* サブのアクセントカラー（鮮やかなピンク・パープル） */
-    --cream:#ffffff;  /* メインの背景色（純白） */
-    --slate:#64748B;  /* 補足文字色（グレー系、日程の説明など） */
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--cream);
-    color:var(--navy);
-    font-family:'Shippori Mincho',sans-serif;
-    overflow-x:hidden;
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-  }
+        /* ---------- LOGO INTRO（ロゴ単独ページ） ---------- */
+        .logo-intro{
+          min-height:100vh;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          gap:1.6rem;
+          background:linear-gradient(165deg, #ffffff 0%, #f7f5fa 55%, #f1eef7 100%);
+        }
+        .logo-intro img{
+          width:min(420px,70vw);
+          height:min(420px,70vw);
+          object-fit:cover;
+          border-radius:50%;
+          box-shadow:0 12px 32px -12px rgba(212,149,32,0.35);
+        }
+        .logo-intro .logo-caption{
+          font-family:'Shippori Mincho',sans-serif;
+          letter-spacing:0.3em;
+          text-transform:uppercase;
+          font-size:0.8rem;
+          color:var(--gold);
+        }
 
-  /* ---------- utility ---------- */
-  .eyebrow{
-    font-family:'Shippori Mincho',sans-serif;
-    font-weight:600;
-    letter-spacing:0.35em;
-    text-transform:uppercase;
-    font-size:0.78rem;
-    color:var(--gold);
-  }
-  .section{
-    padding:7rem 6vw;
-    position:relative;
-  }
-  @media (max-width:640px){
-    .section{padding:5rem 6vw;}
-  }
-  .section-inner{
-    max-width:920px;
-    margin:0 auto;
-  }
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--gold);
-    outline-offset:4px;
-  }
+        /* ---------- カウントダウン（ロゴ上） ---------- */
+        .countdown{
+          display:none; /* JSで条件を満たした時だけ表示 */
+          font-family:'Big Shoulders Display',sans-serif;
+          letter-spacing:0.15em;
+          font-weight:600;
+          font-size:clamp(1.1rem, 3.0vw, 1.6rem);
+          color:var(--coral);
+          background:rgba(214,76,214,0.08);
+          border:1px solid rgba(214,76,214,0.3);
+          padding:0.6rem 1.4rem;
+          border-radius:999px;
+        }
+        .countdown.is-visible{
+          display:inline-block;
+        }
+        .countdown .num{
+          color:var(--gold);
+          font-size:1.15em;
+          margin:0 0.15em;
+        }
 
-  /* ---------- LOGO INTRO（ロゴ単独ページ） ---------- */
-  .logo-intro{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    gap:1.6rem;
-    background:linear-gradient(165deg, #ffffff 0%, #f7f5fa 55%, #f1eef7 100%);
-  }
-  .logo-intro img{
-    width:min(420px,70vw);
-    height:min(420px,70vw);
-    object-fit:cover;
-    border-radius:50%;
-    box-shadow:0 12px 32px -12px rgba(212,149,32,0.35);
-  }
-  .logo-intro .logo-caption{
-    font-family:'Shippori Mincho',sans-serif;
-    letter-spacing:0.3em;
-    text-transform:uppercase;
-    font-size:0.8rem;
-    color:var(--gold);
-  }
+        .logo-mark{
+          width:96px;
+          height:96px;
+          border:1px solid rgba(212,149,32,0.4);
+          border-radius:50%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-family:'Shippori Mincho',sans-serif;
+          letter-spacing:0.08em;
+          font-size:0.75rem;
+          color:var(--gold);
+          text-align:center;
+          line-height:1.3;
+        }
 
-  /* ---------- カウントダウン（ロゴ上） ---------- */
-  .countdown{
-    display:none; /* JSで条件を満たした時だけ表示 */
-    font-family:'Big Shoulders Display',sans-serif;
-    letter-spacing:0.15em;
-    font-weight:600;
-    font-size:clamp(1.1rem, 3.0vw, 1.6rem);
-    color:var(--coral);
-    background:rgba(214,76,214,0.08);
-    border:1px solid rgba(214,76,214,0.3);
-    padding:0.6rem 1.4rem;
-    border-radius:999px;
-  }
-  .countdown.is-visible{
-    display:inline-block;
-  }
-  .countdown .num{
-    color:var(--gold);
-    font-size:1.15em;
-    margin:0 0.15em;
-  }
+        /* ---------- HERO ---------- */
+        .hero{
+          min-height:100vh;
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          text-align:center;
+          position:relative;
+          padding:6rem 6vw 4rem;
+          background:
+            radial-gradient(ellipse 80% 60% at 50% 15%, rgba(212,149,32,0.15), transparent 60%),
+            linear-gradient(165deg, #ffffff 0%, #f7f5fa 55%, #f1eef7 100%);
+          overflow:hidden;
+        }
+        .hero-eyebrow{
+          font-family:'Big Shoulders Display',sans-serif;
+          letter-spacing:0.5em;
+          text-transform:uppercase;
+          color:var(--coral);
+          font-size:1.0rem;
+          margin-bottom:2.0rem;
+        }
+        .event-title{
+          font-family:'Anton',sans-serif;
+          font-weight:400;
+          font-size:clamp(2.8rem, 10vw, 6.5rem);
+          line-height:0.95;
+          letter-spacing:0.02em;
+          color:var(--navy);
+          text-transform:uppercase;
+        }
+        .event-title span{
+          display:block;
+          color:var(--gold);
+          font-size:clamp(1.8rem, 6vw, 3.6rem);
+          margin-top:0.3rem;
+        }
+        .hero-sub{
+          font-family:'Shippori Mincho',serif;
+          font-size:clamp(1.1rem,2.4vw,1.55rem);
+          margin-top:1.6rem;
+          color:var(--navy);
+          letter-spacing:0.06em;
+        }
+        .hero-date{
+          margin-top:2.2rem;
+          font-family:'Shippori Mincho',sans-serif;
+          font-size:clamp(1rem,2vw,1.3rem);
+          color:var(--slate);
+          letter-spacing:0.08em;
+        }
+        .hero-date b{color:var(--navy);font-weight:600;}
 
-  .logo-mark{
-    width:96px;
-    height:96px;
-    border:1px solid rgba(212,149,32,0.4);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:'Shippori Mincho',sans-serif;
-    letter-spacing:0.08em;
-    font-size:0.75rem;
-    color:var(--gold);
-    text-align:center;
-    line-height:1.3;
-  }
+        /* 縄アニメーション */
+        .rope-wrap{
+          width:min(560px, 80vw);
+          margin-top:3rem;
+          position:relative;
+        }
+        .rope-wrap svg{width:100%;height:auto;display:block;}
+        .rope-path{
+          fill:none;
+          stroke-linecap:round;
+        }
+        .rope-a{stroke:var(--gold); stroke-width:3;}
+        .rope-b{stroke:var(--coral); stroke-width:3; opacity:0.85;}
+        .rope-draw{
+          stroke-dasharray:1200;
+          stroke-dashoffset:1200;
+          animation:draw 3.2s ease-in-out infinite;
+        }
+        .rope-b.rope-draw{animation-delay:0.15s;}
+        @keyframes draw{
+          0%{stroke-dashoffset:1200;}
+          45%{stroke-dashoffset:0;}
+          100%{stroke-dashoffset:-1200;}
+        }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    position:relative;
-    padding:6rem 6vw 4rem;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% 15%, rgba(212,149,32,0.15), transparent 60%),
-      linear-gradient(165deg, #ffffff 0%, #f7f5fa 55%, #f1eef7 100%);
-    overflow:hidden;
-  }
-  .hero-eyebrow{
-    font-family:'Big Shoulders Display',sans-serif;
-    letter-spacing:0.5em;
-    text-transform:uppercase;
-    color:var(--coral);
-    font-size:1.0rem;
-    margin-bottom:2.0rem;
-  }
-  .event-title{
-    font-family:'Anton',sans-serif;
-    font-weight:400;
-    font-size:clamp(2.8rem, 10vw, 6.5rem);
-    line-height:0.95;
-    letter-spacing:0.02em;
-    color:var(--navy);
-    text-transform:uppercase;
-  }
-  .event-title span{
-    display:block;
-    color:var(--gold);
-    font-size:clamp(1.8rem, 6vw, 3.6rem);
-    margin-top:0.3rem;
-  }
-  .hero-sub{
-    font-family:'Shippori Mincho',serif;
-    font-size:clamp(1.1rem,2.4vw,1.55rem);
-    margin-top:1.6rem;
-    color:var(--navy);
-    letter-spacing:0.06em;
-  }
-  .hero-date{
-    margin-top:2.2rem;
-    font-family:'Shippori Mincho',sans-serif;
-    font-size:clamp(1rem,2vw,1.3rem);
-    color:var(--slate);
-    letter-spacing:0.08em;
-  }
-  .hero-date b{color:var(--navy);font-weight:600;}
+        .scroll-cue{
+          position:absolute;
+          bottom:2.4rem;
+          left:50%;
+          transform:translateX(-50%);
+          font-family:'Shippori Mincho',sans-serif;
+          font-size:0.72rem;
+          letter-spacing:0.3em;
+          text-transform:uppercase;
+          color:var(--slate);
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          gap:0.5rem;
+        }
+        .scroll-cue::after{
+          content:'';
+          width:1px;
+          height:28px;
+          background:linear-gradient(var(--gold), transparent);
+          animation:cue 1.8s ease-in-out infinite;
+        }
+        @keyframes cue{
+          0%,100%{opacity:0.2; transform:scaleY(0.6);}
+          50%{opacity:1; transform:scaleY(1);}
+        }
 
-  /* 縄アニメーション */
-  .rope-wrap{
-    width:min(560px, 80vw);
-    margin-top:3rem;
-    position:relative;
-  }
-  .rope-wrap svg{width:100%;height:auto;display:block;}
-  .rope-path{
-    fill:none;
-    stroke-linecap:round;
-  }
-  .rope-a{stroke:var(--gold); stroke-width:3;}
-  .rope-b{stroke:var(--coral); stroke-width:3; opacity:0.85;}
-  .rope-draw{
-    stroke-dasharray:1200;
-    stroke-dashoffset:1200;
-    animation:draw 3.2s ease-in-out infinite;
-  }
-  .rope-b.rope-draw{animation-delay:0.15s;}
-  @keyframes draw{
-    0%{stroke-dashoffset:1200;}
-    45%{stroke-dashoffset:0;}
-    100%{stroke-dashoffset:-1200;}
-  }
+        /* ---------- セクションの区切り線 ---------- */
+        .divider{
+          height:120px;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          background:var(--cream);
+        }
+        .divider svg{width:min(300px,60vw);height:auto;}
+        .divider-path{
+          fill:none;
+          stroke:var(--gold);
+          stroke-width:2;
+          stroke-linecap:round;
+          stroke-dasharray:400;
+          stroke-dashoffset:400;
+          transition:stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1);
+        }
+        .divider.in-view .divider-path{stroke-dashoffset:0;}
 
-  .scroll-cue{
-    position:absolute;
-    bottom:2.4rem;
-    left:50%;
-    transform:translateX(-50%);
-    font-family:'Shippori Mincho',sans-serif;
-    font-size:0.72rem;
-    letter-spacing:0.3em;
-    text-transform:uppercase;
-    color:var(--slate);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:0.5rem;
-  }
-  .scroll-cue::after{
-    content:'';
-    width:1px;
-    height:28px;
-    background:linear-gradient(var(--gold), transparent);
-    animation:cue 1.8s ease-in-out infinite;
-  }
-  @keyframes cue{
-    0%,100%{opacity:0.2; transform:scaleY(0.6);}
-    50%{opacity:1; transform:scaleY(1);}
-  }
-
-  /* ---------- セクションの区切り線 ---------- */
-  .divider{
-    height:120px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--cream);
-  }
-  .divider svg{width:min(300px,60vw);height:auto;}
-  .divider-path{
-    fill:none;
-    stroke:var(--gold);
-    stroke-width:2;
-    stroke-linecap:round;
-    stroke-dasharray:400;
-    stroke-dashoffset:400;
-    transition:stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1);
-  }
-  .divider.in-view .divider-path{stroke-dashoffset:0;}
-
-  /* ---------- ABOUT ---------- */
-  .about{
-    background:var(--cream);
-  }
-  .about-heading{
-  font-family:'Big Shoulders Display','Noto Sans JP',sans-serif;
-  font-weight:800;
-  font-size:clamp(2.2rem,6vw,3rem);
-  line-height:1.35;
-  padding-bottom:0.15em;
-  letter-spacing:0.04em;
-  background:linear-gradient(100deg, var(--gold), var(--coral));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  display:inline-block;
-}
-
-  .about-subheading{
-    font-family:'Shippori Mincho',serif;
-    font-size:clamp(1.2rem,2.6vw,1.6rem);
-    color:var(--navy);
-    margin-top:0.6rem;
-    margin-bottom:2rem;
-  }
-  .about p{
-    font-family:'Shippori Mincho',sans-serif;
-    font-size:clamp(1rem,1.8vw,1.1rem);
-    line-height:2;
-    color:#334155;
-    margin-bottom:1.4rem;
-  }
-  .video-frame{
-    position:relative;
-    width:100%;
-    padding-top:56.25%; /* 16:9 */
-    margin-top:2.5rem;
-    background:#000;
-    border:1px solid rgba(212,149,32,0.25);
-  }
-  .video-frame iframe{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    border:0;
-  }
-  .video-placeholder{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:0.8rem;
-    background:linear-gradient(160deg,#1b2340,#2a2550);
-    color:#fff;
-  }
-  .video-placeholder .cs-main{
-    font-family:'Anton',sans-serif;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    font-size:clamp(1.4rem,4vw,2.2rem);
-    color:var(--gold);
-  }
-  .video-placeholder .cs-sub{
-    font-family:'Shippori Mincho',sans-serif;
-    letter-spacing:0.1em;
-    font-size:clamp(0.85rem,2vw,1rem);
-    color:#e6e1ef;
-  }
-
-  /* ---------- MESSAGE ---------- */
-  .message{
-    background:linear-gradient(180deg, var(--plum), #eae0f0);
-  }
-  .message .eyebrow{margin-bottom:1.4rem;}
-  .message h2{
-    font-family:'Shippori Mincho',sans-serif;
-    font-weight:600;
-    font-size:clamp(1.8rem,4vw,2.6rem);
-    margin-bottom:2rem;
-    color:var(--navy);
-  }
-  .message p{
-    font-family:'Shippori Mincho',serif;
-    font-size:clamp(1.05rem,1.9vw,1.25rem);
-    line-height:2.1;
-    color:#1e293b;
-    margin-bottom:1.6rem;
-  }
-
-  .member-messages{
-    margin-top:3rem;
-  }
-  .member-message{
-    padding:2.4rem 0;
-    border-top:1px solid rgba(212,149,32,0.25);
-  }
-  .member-message:first-child{
-    border-top:1px solid rgba(212,149,32,0.25);
-  }
-  .member-name{
-    font-family:'Shippori Mincho',sans-serif;
-    letter-spacing:0.15em;
-    text-transform:uppercase;
-    color:var(--gold);
-    font-size:0.95rem;
-    margin-bottom:1rem;
-  }
-  .member-message p{
-    margin-bottom:0;
-    font-size:clamp(1rem,1.7vw,1.15rem);
-  }
-  .member-message .message-placeholder{
-    color:var(--slate);
-    font-style:italic;
-  }
-  .member-message .message-content{
-    display:none;
-  }
-  .member-message.is-published .message-placeholder{
-    display:none;
-  }
-  .member-message.is-published .message-content{
-    display:block;
-  }
-
-  .signature{
-    margin-top:3rem;
-    font-family:'Shippori Mincho',sans-serif;
-    letter-spacing:0.1em;
-    color:var(--gold);
-    text-align:right;
-    font-size:1.1rem;
-  }
-
-  /* ---------- INFO / TICKETS ---------- */
-  .info{
-    background:var(--cream);
-  }
-  .info-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
-    gap:1px;
-    background:rgba(212,149,32,0.25);
-    border:1px solid rgba(212,149,32,0.25);
-    margin-top:2.5rem;
-  }
-  .info-card{
-    background:var(--cream);
-    padding:2.2rem 1.8rem;
-  }
-  .info-card .label{
-    font-family:'Shippori Mincho',sans-serif;
-    font-size:0.72rem;
-    letter-spacing:0.25em;
-    text-transform:uppercase;
-    color:var(--coral);
-    margin-bottom:0.9rem;
-  }
-  .info-card .value{
-    font-family:'Shippori Mincho',sans-serif;
-    font-weight:500;
-    font-size:1.05rem;
-    color:var(--navy);
-    line-height:1.7;
-  }
-  .info-card .value small{
-    display:block;
-    color:var(--slate);
-    font-weight:300;
-    font-size:0.85rem;
-    margin-top:0.35rem;
-  }
-
-  .ticket-cta{
-    margin-top:3rem;
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:space-between;
-    gap:1.6rem;
-    padding:2.4rem;
-    border:1px solid rgba(212,149,32,0.35);
-    background:rgba(212,149,32,0.04);
-  }
-  .ticket-cta p{
-    font-family:'Shippori Mincho',serif;
-    font-size:1.05rem;
-    color:var(--navy);
-  }
-  .ticket-cta .note{color:var(--slate); font-size:0.85rem; margin-top:0.4rem; font-family:'Noto Sans JP',sans-serif;}
-  .btn{
-    font-family:'Shippori Mincho',sans-serif;
-    letter-spacing:0.12em;
-    font-weight:600;
-    text-transform:uppercase;
-    font-size:0.95rem;
-    color:var(--cream);
-    background:var(--gold);
-    border:none;
-    padding:1rem 2.4rem;
-    cursor:pointer;
-    text-decoration:none;
-    white-space:nowrap;
-    transition:transform 0.25s ease, box-shadow 0.25s ease;
-    display:inline-block;
-  }
-  .btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 24px -8px rgba(212,149,32,0.4);
-  }
-
-  /* ---------- SOCIAL LINKS ---------- */
-  .social-label{
-    margin-top:2.6rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:0.6rem;
-    font-family:'Shippori Mincho',serif;
-    font-weight:600;
-    font-size:1.05rem;
-    letter-spacing:0.08em;
-    color:var(--navy);
-  }
-  .social-label::before,
-  .social-label::after{
-    content:"";
-    width:28px;
-    height:1px;
-    background:var(--gold);
-  }
-  .social-label .arrow{
-    display:inline-block;
-    color:var(--gold);
-    animation:bounce-down 1.6s ease-in-out infinite;
-  }
-  @keyframes bounce-down{
-    0%,100%{ transform:translateY(0); }
-    50%{ transform:translateY(4px); }
-  }
-  .social-links{
-    margin-top:1.2rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:1.1rem;
-  }
-  .social-links a{
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    border:1px solid rgba(212,149,32,0.35);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--navy);
-    background:var(--cream);
-    transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
-  }
-  .social-links a svg{
-    width:20px;
-    height:20px;
-    fill:currentColor;
-  }
-  .social-links a:hover{
-    transform:translateY(-3px);
-    border-color:var(--gold);
-    color:var(--gold);
-    box-shadow:0 8px 18px -8px rgba(212,149,32,0.5);
-  }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    padding:4rem 6vw 3rem;
-    text-align:center;
-    background:var(--cream);
-    border-top:1px solid rgba(0,0,0,0.06);
-  }
-  footer .team{
-    font-family:'Shippori Mincho',sans-serif;
-    letter-spacing:0.2em;
-    color:var(--slate);
-    font-size:0.85rem;
-    text-transform:uppercase;
-  }
-  footer .thanks{
-    margin-top:0.8rem;
-    font-family:'Shippori Mincho',serif;
-    color:var(--navy);
-    font-size:1rem;
-  }
-
-  .reveal{
-    opacity:0;
-    transform:translateY(24px);
-    transition:opacity 0.9s ease, transform 0.9s ease;
-  }
-  .reveal.in-view{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-  /* ---------- 目次（ナビゲーション） ---------- */
-  .toc-toggle{
-    position:fixed;
-    top:1.2rem;
-    right:1.2rem;
-    z-index:1000;
-    display:flex;
-    align-items:center;
-    gap:0.55rem;
-    height:48px;
-    padding:0 1.1rem 0 0.9rem;
-    border-radius:999px;
-    border:1.5px solid rgba(212,149,32,0.55);
-    background:rgba(255,255,255,0.95);
-    backdrop-filter:blur(6px);
-    cursor:pointer;
-    box-shadow:0 8px 20px -8px rgba(27,35,64,0.3);
-    transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  }
-  .toc-toggle:hover{
-    transform:translateY(-2px);
-    border-color:var(--gold);
-    box-shadow:0 12px 24px -8px rgba(212,149,32,0.4);
-  }
-  .toc-toggle .bars{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    width:20px;
-  }
-  .toc-toggle .bars span{
-    display:block;
-    width:20px;
-    height:2px;
-    border-radius:2px;
-    background:var(--navy);
-    transition:transform 0.3s ease, opacity 0.3s ease;
-  }
-  .toc-toggle.is-open .bars span:nth-child(1){transform:translateY(6px) rotate(45deg);}
-  .toc-toggle.is-open .bars span:nth-child(2){opacity:0;}
-  .toc-toggle.is-open .bars span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
-  .toc-toggle .toc-btn-text{
-    font-family:'Shippori Mincho',sans-serif;
-    font-weight:600;
-    letter-spacing:0.15em;
-    font-size:0.82rem;
-    color:var(--navy);
-  }
-
-  .toc-panel{
-    position:fixed;
-    inset:0;
-    z-index:999;
-    background:rgba(27,23,40,0.6);
-    backdrop-filter:blur(2px);
-    opacity:0;
-    visibility:hidden;
-    transition:opacity 0.35s ease, visibility 0.35s ease;
-  }
-  .toc-panel.is-open{
-    opacity:1;
-    visibility:visible;
-  }
-  .toc-menu{
-    position:absolute;
-    top:0;
-    right:0;
-    height:100%;
-    width:min(340px,84vw);
-    background:linear-gradient(165deg,#ffffff 0%, #f7f5fa 55%, #f1eef7 100%);
-    box-shadow:-12px 0 32px -14px rgba(27,35,64,0.35);
-    padding:2rem 1.6rem 2.5rem;
-    display:flex;
-    flex-direction:column;
-    transform:translateX(100%);
-    transition:transform 0.4s cubic-bezier(.2,.7,.2,1);
-  }
-  .toc-panel.is-open .toc-menu{
-    transform:translateX(0);
-  }
-  .toc-menu-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:1.6rem;
-    padding-bottom:1.2rem;
-    border-bottom:1px solid rgba(212,149,32,0.3);
-  }
-  .toc-label{
-    font-family:'Shippori Mincho',sans-serif;
-    letter-spacing:0.28em;
-    text-transform:uppercase;
-    font-size:0.8rem;
-    color:var(--gold);
-    font-weight:600;
-  }
-  .toc-close{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    border:1px solid rgba(212,149,32,0.4);
-    background:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    color:var(--navy);
-    font-size:1.1rem;
-    line-height:1;
-    transition:border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-  }
-  .toc-close:hover{
-    border-color:var(--gold);
-    color:var(--gold);
-    transform:rotate(90deg);
-  }
-  .toc-menu nav{
-    display:flex;
-    flex-direction:column;
-    gap:0.3rem;
-  }
-  .toc-menu a{
-    display:flex;
-    align-items:center;
-    gap:1rem;
-    padding:1rem 0.6rem;
-    border-radius:12px;
-    text-decoration:none;
-    color:var(--navy);
-    transition:background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
-  }
-  .toc-menu a:hover{
-    background:rgba(212,149,32,0.08);
-    padding-left:0.9rem;
-  }
-  .toc-menu a.is-current{
-    background:rgba(212,149,32,0.12);
-  }
-  .toc-menu a.is-current .toc-num{
-    background:var(--gold);
-    color:#fff;
-  }
-  .toc-num{
-    flex:0 0 auto;
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    border:1.5px solid rgba(212,149,32,0.5);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:'Big Shoulders Display',sans-serif;
-    font-size:0.85rem;
-    color:var(--gold);
-    transition:background 0.2s ease, color 0.2s ease;
-  }
-  .toc-text{
-    display:flex;
-    flex-direction:column;
-    gap:0.15rem;
-  }
-  .toc-ja{
-    font-family:'Shippori Mincho',serif;
-    font-size:1.05rem;
-    letter-spacing:0.04em;
-  }
-  .toc-en{
-    font-family:'Big Shoulders Display',sans-serif;
-    font-size:0.68rem;
-    letter-spacing:0.14em;
-    color:var(--slate);
-    text-transform:uppercase;
-  }
-  .toc-menu-footer{
-    margin-top:auto;
-    padding-top:1.4rem;
-    text-align:center;
-    font-family:'Shippori Mincho',sans-serif;
-    font-size:0.72rem;
-    letter-spacing:0.12em;
-    color:var(--slate);
-  }
-  @media (max-width:380px){
-    .toc-toggle{
-      width:48px;
-      height:48px;
-      padding:0;
-      justify-content:center;
-    }
-    .toc-toggle .toc-btn-text{display:none;}
-  }
-</style>
-</head>
-<body>
-
-<button class="toc-toggle" id="tocToggle" aria-label="目次を開く" aria-expanded="false" aria-controls="tocPanel">
-  <span class="bars"><span></span><span></span><span></span></span>
-  <span class="toc-btn-text">目次</span>
-</button>
-
-<div class="toc-panel" id="tocPanel">
-  <div class="toc-menu">
-    <div class="toc-menu-header">
-      <div class="toc-label">Contents / 目次</div>
-      <button class="toc-close" id="tocClose" aria-label="目次を閉じる">✕</button>
-    </div>
-    <nav aria-label="目次">
-      <a href="#top" data-section="top"><span class="toc-num">1</span><span class="toc-text"><span class="toc-ja">トップ</span><span class="toc-en">Top</span></span></a>
-      <a href="#about" data-section="about"><span class="toc-num">2</span><span class="toc-text"><span class="toc-ja">Relay of Rallyとは</span><span class="toc-en">About</span></span></a>
-      <a href="#rally" data-section="rally"><span class="toc-num">3</span><span class="toc-text"><span class="toc-ja">Rallyについて</span><span class="toc-en">Circle</span></span></a>
-      <a href="#message" data-section="message"><span class="toc-num">4</span><span class="toc-text"><span class="toc-ja">メッセージ</span><span class="toc-en">Message</span></span></a>
-      <a href="#info" data-section="info"><span class="toc-num">5</span><span class="toc-text"><span class="toc-ja">公演情報</span><span class="toc-en">Info</span></span></a>
-      <a href="#sns" data-section="sns"><span class="toc-num">6</span><span class="toc-text"><span class="toc-ja">公式SNS</span><span class="toc-en">SNS</span></span></a>
-    </nav>
-    <div class="toc-menu-footer">Relay of Rally 2026</div>
-  </div>
-</div>
-
-<section class="logo-intro" id="top">
-  <div class="countdown" id="countdown"></div>
-  <img src="IMG_0153.webp" alt="Relay of Rally 2026 ロゴ">
-  <div class="logo-caption">Relay of Rally
-	<div class="logo-caption">2026</div>
-  <div class="scroll-cue">Scroll</div>
-</section>
-
-<section class="hero">
-  <div class="hero-eyebrow">Rally 3rd generation final Performance</div>
-  <h1 class="event-title">Relay of Rally<span>2026</span></h1>
-  <p class="hero-sub">跳び続けた日々に、ありがとう。</p>
-  <p class="hero-date">2026年12月12日(土)</p>
-  <p class="hero-date">メガネのイタガキ文化ホール伊勢崎</p>
-  <div class="rope-wrap" aria-hidden="true">
-    <svg viewBox="0 0 500 220">
-      <path class="rope-path rope-a rope-draw" d="M20,110 C 140,10 220,210 250,110 C 280,10 360,210 480,110"/>
-      <path class="rope-path rope-b rope-draw" d="M20,110 C 140,210 220,10 250,110 C 280,210 360,10 480,110"/>
-    </svg>
-  </div>
-
-  <div class="scroll-cue">Scroll</div>
-</section>
-
-<div class="divider" data-observe>
-  <svg viewBox="0 0 300 60" aria-hidden="true">
-    <path class="divider-path" d="M10,30 C 90,-10 130,70 150,30 C 170,-10 210,70 290,30"/>
-  </svg>
-</div>
-
-<section class="section about" id="about">
-  <div class="section-inner reveal" data-observe>
-    <div class="eyebrow">About</div>
-    <h2 class="about-heading">Relay of Rallyとは！</h2>
-    <div class="about-subheading">【Relay of Rallyについて】</div>
-    <p>
-       Relay of Rallyとは、2024年の12月8日を第1回目してに開催された群馬県内最大級のダブルダッチイベントです！
-第１回は初開催でありながら、来場者数は、200人越えを記録しました。
-「Relay of Rally」は群馬県内でダブルダッチというスポーツの魅力を広めたいという思いから企画されました。
-我々、群馬大学ダブルダッチサークル Rally含め、群馬県内で活躍する全てのダブルダッチプレーヤーが集まります。
-また、大学生だけではなく、社会人の方や子どもたち、ゲストの方、そして観客の方と一体となって作り上げる公演会となっています。
-群馬大学ダブルダッチサークルRallyに所属する現役生による引退公演です｡
-		</p>
-<p>		
-
-「Relay」は、ダブルダッチをする人を増やし、次世代へとダブルダッチを繋ぐ。
-
-「Rally」は、”集結”という意味を持つサークル名。
-
-本公演を通じて、ダブルダッチを知っている人や初めて見る人を”集め”、”リレー”のようにダブルダッチを群馬で繋げていく事を目的とし、イベント名を「Relay of Rally」と名付けました。
-2026年、３代目の引退公演にして設立5周年となる節目の年に行われる今年の公演を、今年最上級生として頑張ってきた私たち３代目による最後のパフォーマンスをぜひご覧ください！
-    </p>
-
-    <div class="social-label reveal" data-observe>私たちの活動の様子はこちらから！！<span class="arrow">↓</span></div>
-    <div class="social-links reveal" data-observe>
-      <a href="https://x.com/GUrallydd" target="_blank" rel="noopener noreferrer" aria-label="Xで見る">
-        <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.5-7.2L4.4 22H1.3l8.2-9.3L1 2h7.3l5 6.6L18.9 2zm-1.2 18h1.9L7.4 4H5.3l12.4 16z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/gu_rally.double_dutch" target="_blank" rel="noopener noreferrer" aria-label="Instagramで見る">
-        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.5.42.6.24 1.1.55 1.6 1.05.5.5.8 1 1.05 1.6.17.5.36 1.3.42 2.5.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.42 2.5-.24.6-.55 1.1-1.05 1.6-.5.5-1 .8-1.6 1.05-.5.17-1.3.36-2.5.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.5-.42-.6-.24-1.1-.55-1.6-1.05-.5-.5-.8-1-1.05-1.6-.17-.5-.36-1.3-.42-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .42-2.5.24-.6.55-1.1 1.05-1.6.5-.5 1-.8 1.6-1.05.5-.17 1.3-.36 2.5-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .04-1.6.2-1.96.34-.5.19-.84.42-1.22.8-.38.38-.6.72-.8 1.22-.14.36-.3.95-.34 1.96C2.8 8.48 2.8 8.85 2.8 12s0 3.52.07 4.76c.04 1 .2 1.6.34 1.96.19.5.42.84.8 1.22.38.38.72.6 1.22.8.36.14.95.3 1.96.34 1.24.07 1.61.07 4.76.07s3.52 0 4.76-.07c1-.04 1.6-.2 1.96-.34.5-.19.84-.42 1.22-.8.38-.38.6-.72.8-1.22.14-.36.3-.95.34-1.96.07-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.04-1-.2-1.6-.34-1.96-.19-.5-.42-.84-.8-1.22-.38-.38-.72-.6-1.22-.8-.36-.14-.95-.3-1.96-.34C15.52 4 15.15 4 12 4zm0 3.6a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 1.8a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2zm4.6-2a1.03 1.03 0 1 1 0 2.06 1.03 1.03 0 0 1 0-2.06z"/></svg>
-      </a>
-      <a href="https://youtube.com/@gu_rally.double_dutch?si=gLGm8M6Qptmgk2m-" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで見る">
-        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="divider" data-observe>
-  <svg viewBox="0 0 300 60" aria-hidden="true">
-    <path class="divider-path" d="M10,30 C 90,-10 130,70 150,30 C 170,-10 210,70 290,30"/>
-  </svg>
-</div>
-
-<section class="section about" id="rally">
-  <div class="section-inner reveal" data-observe>
-    <div class="eyebrow">Circle</div>
-    <h2 class="about-heading">Rallyについて</h2>
-    <div class="about-subheading">【群馬大学ダブルダッチサークル Rally】</div>
-    <p>
-群馬大学ダブルダッチサークルRallyは2022年に設立されました。
-群馬県でダブルダッチの普及を目指し、様々なイベントにてパフォーマンス披露や体験会の開催などの活動をしてきました。
-2024年、群馬県でのダブルダッチシーンをさらに盛り上げるために県内初となるダブルダッチパフォーマンス公演“Relay of Rally"を開催いたしました。
-		</p>
-<p>
-普段の私たちは火曜日の18:00~21:00,土曜日の14:00~18:00に荒牧キャンパスで、水曜日の14:00~18:00に桐生キャンパスにて日々練習をしております。
-また、月に一度開催される「Let's Play Double Dutch in 群馬」やアーバンスポーツフェス、HOTTESTにも参加しております！
-私たちの活動に興味がある方は下のリンクから各種SNSに飛んでいただくと、私たちの活動を見ることができます！！
-    </p>
-
-    <div class="social-label reveal" data-observe>私たちの活動の様子はこちらから！！<span class="arrow">↓</span></div>
-    <div class="social-links reveal" data-observe>
-      <a href="https://x.com/GUrallydd" target="_blank" rel="noopener noreferrer" aria-label="Xで見る">
-        <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.5-7.2L4.4 22H1.3l8.2-9.3L1 2h7.3l5 6.6L18.9 2zm-1.2 18h1.9L7.4 4H5.3l12.4 16z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/gu_rally.double_dutch" target="_blank" rel="noopener noreferrer" aria-label="Instagramで見る">
-        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.5.42.6.24 1.1.55 1.6 1.05.5.5.8 1 1.05 1.6.17.5.36 1.3.42 2.5.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.42 2.5-.24.6-.55 1.1-1.05 1.6-.5.5-1 .8-1.6 1.05-.5.17-1.3.36-2.5.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.5-.42-.6-.24-1.1-.55-1.6-1.05-.5-.5-.8-1-1.05-1.6-.17-.5-.36-1.3-.42-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .42-2.5.24-.6.55-1.1 1.05-1.6.5-.5 1-.8 1.6-1.05.5-.17 1.3-.36 2.5-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .04-1.6.2-1.96.34-.5.19-.84.42-1.22.8-.38.38-.6.72-.8 1.22-.14.36-.3.95-.34 1.96C2.8 8.48 2.8 8.85 2.8 12s0 3.52.07 4.76c.04 1 .2 1.6.34 1.96.19.5.42.84.8 1.22.38.38.72.6 1.22.8.36.14.95.3 1.96.34 1.24.07 1.61.07 4.76.07s3.52 0 4.76-.07c1-.04 1.6-.2 1.96-.34.5-.19.84-.42 1.22-.8.38-.38.6-.72.8-1.22.14-.36.3-.95.34-1.96.07-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.04-1-.2-1.6-.34-1.96-.19-.5-.42-.84-.8-1.22-.38-.38-.72-.6-1.22-.8-.36-.14-.95-.3-1.96-.34C15.52 4 15.15 4 12 4zm0 3.6a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 1.8a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2zm4.6-2a1.03 1.03 0 1 1 0 2.06 1.03 1.03 0 0 1 0-2.06z"/></svg>
-      </a>
-      <a href="https://youtube.com/@gu_rally.double_dutch?si=gLGm8M6Qptmgk2m-" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで見る">
-        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="divider" data-observe>
-  <svg viewBox="0 0 300 60" aria-hidden="true">
-    <path class="divider-path" d="M10,30 C 90,-10 130,70 150,30 C 170,-10 210,70 290,30"/>
-  </svg>
-</div>
-
-<section class="section message" id="message">
-  <div class="section-inner reveal" data-observe>
-    <div class="eyebrow">Message for you</div>
-    <h2>初代から続いた、俺たちのRally。この日を持って次世代へ。</h2>
-    <p>
-     3年間、この街の風を切って跳んできました。転んだ日も、息が合わなかった日も、ロープの音だけが正直に鳴っていました。
-    </p>
-
-    <div class="member-messages" id="memberMessages">
-      <div class="member-message">
-        <div class="member-name">【ひめな（hime）】</div>
-        <p class="message-placeholder">近日公開予定！来たる日までお待ちください！！</p>
-        <p class="message-content">【メンバー1からのメッセージをここに入れてください。】</p>
-      </div>
-      <div class="member-message">
-        <div class="member-name">【るいと(ruito)】</div>
-        <p class="message-placeholder">近日公開予定！来たる日までお待ちください！！</p>
-        <p class="message-content">【メンバー2からのメッセージをここに入れてください。】</p>
-      </div>
-      <div class="member-message">
-        <div class="member-name">【のどか】</div>
-        <p class="message-placeholder">近日公開予定！来たる日までお待ちください！！</p>
-        <p class="message-content">【メンバー3からのメッセージをここに入れてください。】</p>
-      </div>
-      <div class="member-message">
-        <div class="member-name">【ひかり】</div>
-        <p class="message-placeholder">近日公開予定！来たる日までお待ちください！！</p>
-        <p class="message-content">【メンバー1からのメッセージをここに入れてください。】</p>
-      </div>
-      <div class="member-message">
-        <div class="member-name">【しょうた（Sho-ta）】</div>
-        <p class="message-placeholder">近日公開予定！来たる日までお待ちください！！</p>
-        <p class="message-content">【まずはこれだけ言いたい。Rallyは良かったぞ。最後にこれだけ言わせてくれ！RallyはBIGLOVE…で最高のサークルだったぜ！！！】</p>
-      </div>
-    </div>
-
-    <div class="signature">【3代目　Weeeeeek】一同</div>
-  </div>
-</section>
-
-<div class="divider" data-observe>
-  <svg viewBox="0 0 300 60" aria-hidden="true">
-    <path class="divider-path" d="M10,30 C 90,-10 130,70 150,30 C 170,-10 210,70 290,30"/>
-  </svg>
-</div>
-
-<section class="section info" id="info">
-  <div class="section-inner reveal" data-observe>
-    <div class="eyebrow">Performance Info</div>
-    <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:600;font-size:clamp(1.8rem,4vw,2.6rem);margin-top:1rem;">公演情報</h2>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="label">Date&timetable</div>
-        <div class="value">2026年12月12日(土)<small>開場 12:30</small></div>
-        <div class="value"><small>開演 13:00</small></div>
-		<div class="value"><small>終演 16:00</small></div>
-      </div>
-      <div class="info-card">
-        <div class="label">Venue</div>
-        <div class="value">メガネのイタガキ文化ホール伊勢崎<small>【伊勢崎駅から徒歩24分、バスで9分】</small></div>
-		<div class="value"><small>【住所:〒372-0014 群馬県伊勢崎市昭和町3918】</small></div>
-      </div>
-      <div class="info-card">
-        <div class="label">Admission</div>
-        <div class="value">入場無料<small>事前予約制で、12月5日までとなります。</small></div>
-		<div class="value"><small>予約を希望される方は、下にあるインスタグラムに飛び、リンクの一番下にある予約フォームからご予約をお願いします！！</small></div>
-      </div>
-      <div class="info-card">
-        <div class="label">Capacity</div>
-        <div class="value">全席【指定/自由】<small>【未定（〜550席）】</small></div>
-      </div>
-    </div>
-
-    <p style="margin-top:2.5rem;font-family:'Noto Sans JP',sans-serif;color:var(--slate);font-size:0.9rem;line-height:1.8;">
-      【入場無料でどなたでもご覧いただけます。当日は会場に直接お越しください!】
-    </p>
-  </div>
-</section>
-
-<footer id="sns">
-  <div class="team reveal" data-observe>Relay of Rally 2026</div>
-  <p class="thanks">最高で最後の舞台を皆様にお届けします！</p>
-	<p>当日は盛り上がっていきましょう！！</p>
-
-  <div class="social-label reveal" data-observe>公式SNSはこちら<span class="arrow">↓</span></div>
-  <div class="social-links reveal" data-observe>
-    <!-- ★各リンクの href="#" の部分を、実際のアカウントURLに置き換えてください -->
-    <a href="https://x.com/GUrallydd" target="_blank" rel="noopener noreferrer" aria-label="Xで見る">
-      <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.5-7.2L4.4 22H1.3l8.2-9.3L1 2h7.3l5 6.6L18.9 2zm-1.2 18h1.9L7.4 4H5.3l12.4 16z"/></svg>
-    </a>
-    <a href="https://www.instagram.com/gu_rally.double_dutch" target="_blank" rel="noopener noreferrer" aria-label="Instagramで見る">
-      <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.5.42.6.24 1.1.55 1.6 1.05.5.5.8 1 1.05 1.6.17.5.36 1.3.42 2.5.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.42 2.5-.24.6-.55 1.1-1.05 1.6-.5.5-1 .8-1.6 1.05-.5.17-1.3.36-2.5.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.5-.42-.6-.24-1.1-.55-1.6-1.05-.5-.5-.8-1-1.05-1.6-.17-.5-.36-1.3-.42-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .42-2.5.24-.6.55-1.1 1.05-1.6.5-.5 1-.8 1.6-1.05.5-.17 1.3-.36 2.5-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .04-1.6.2-1.96.34-.5.19-.84.42-1.22.8-.38.38-.6.72-.8 1.22-.14.36-.3.95-.34 1.96C2.8 8.48 2.8 8.85 2.8 12s0 3.52.07 4.76c.04 1 .2 1.6.34 1.96.19.5.42.84.8 1.22.38.38.72.6 1.22.8.36.14.95.3 1.96.34 1.24.07 1.61.07 4.76.07s3.52 0 4.76-.07c1-.04 1.6-.2 1.96-.34.5-.19.84-.42 1.22-.8.38-.38.6-.72.8-1.22.14-.36.3-.95.34-1.96.07-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.04-1-.2-1.6-.34-1.96-.19-.5-.42-.84-.8-1.22-.38-.38-.72-.6-1.22-.8-.36-.14-.95-.3-1.96-.34C15.52 4 15.15 4 12 4zm0 3.6a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 1.8a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2zm4.6-2a1.03 1.03 0 1 1 0 2.06 1.03 1.03 0 0 1 0-2.06z"/></svg>
-    </a>
-    <a href="https://youtube.com/@gu_rally.double_dutch?si=gLGm8M6Qptmgk2m-" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで見る">
-      <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"/></svg>
-    </a>
-  </div>
-</footer>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
+        /* ---------- ABOUT ---------- */
+        .about{
+          background:var(--cream);
+        }
+        .about-heading{
+        font-family:'Big Shoulders Display','Noto Sans JP',sans-serif;
+        font-weight:800;
+        font-size:clamp(2.2rem,6vw,3rem);
+        line-height:1.35;
+        padding-bottom:0.15em;
+        letter-spacing:0.04em;
+        background:linear-gradient(100deg, var(--gold), var(--coral));
+        -webkit-background-clip:text;
+        background-clip:text;
+        color:transparent;
+        display:inline-block;
       }
-    });
-  }, { threshold: 0.2 });
 
-  document.querySelectorAll('[data-observe]').forEach(el => observer.observe(el));
+        .about-subheading{
+          font-family:'Shippori Mincho',serif;
+          font-size:clamp(1.2rem,2.6vw,1.6rem);
+          color:var(--navy);
+          margin-top:0.6rem;
+          margin-bottom:2rem;
+        }
+        .about p{
+          font-family:'Shippori Mincho',sans-serif;
+          font-size:clamp(1rem,1.8vw,1.1rem);
+          line-height:2;
+          color:#334155;
+          margin-bottom:1.4rem;
+        }
+        .video-frame{
+          position:relative;
+          width:100%;
+          padding-top:56.25%; /* 16:9 */
+          margin-top:2.5rem;
+          background:#000;
+          border:1px solid rgba(212,149,32,0.25);
+        }
+        .video-frame iframe{
+          position:absolute;
+          inset:0;
+          width:100%;
+          height:100%;
+          border:0;
+        }
+        .video-placeholder{
+          position:absolute;
+          inset:0;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          gap:0.8rem;
+          background:linear-gradient(160deg,#1b2340,#2a2550);
+          color:#fff;
+        }
+        .video-placeholder .cs-main{
+          font-family:'Anton',sans-serif;
+          letter-spacing:0.12em;
+          text-transform:uppercase;
+          font-size:clamp(1.4rem,4vw,2.2rem);
+          color:var(--gold);
+        }
+        .video-placeholder .cs-sub{
+          font-family:'Shippori Mincho',sans-serif;
+          letter-spacing:0.1em;
+          font-size:clamp(0.85rem,2vw,1rem);
+          color:#e6e1ef;
+        }
 
-  /* ---------- カウントダウン（ロゴ上） ----------
-     公演日より前  ：「引退公演まであとN日」
-     公演当日      ：「本日開催」
-     公演翌日以降  ：来年の日程が決まるまで非表示のまま
-     ※引退公演の日程が決まったら、下の eventDateStr を書き換えてください
-  ---------- */
-  (function initCountdown(){
-    const eventDateStr = '2026-12-12'; // 公演日（来年決まったらここを更新）
-    const countdownEl = document.getElementById('countdown');
-    if (!countdownEl) return;
+        /* ---------- HISTORY（年表） ---------- */
+        .history{
+          background:var(--cream);
+        }
+        .tl{
+          max-width:640px;
+          margin:2.5rem auto 0;
+          padding:0 0 0 1.8rem;
+          border-left:2px solid rgba(212,149,32,0.35);
+          list-style:none;
+        }
+        .tl-item{
+          position:relative;
+          padding:0 0 2.4rem 0.6rem;
+        }
+        .tl-item:last-child{padding-bottom:0;}
+        .tl-item::before{
+          content:"";
+          position:absolute;
+          left:calc(-1.8rem - 7px);
+          top:0.6em;
+          width:12px;
+          height:12px;
+          border-radius:50%;
+          background:var(--gold);
+          border:2px solid #fff;
+          box-shadow:0 0 0 3px rgba(212,149,32,0.25);
+        }
+        .tl-item:last-child::before{
+          background:var(--coral);
+          box-shadow:0 0 0 3px rgba(214,76,214,0.25);
+        }
+        .tl-year{
+          font-family:'Big Shoulders Display',sans-serif;
+          font-weight:800;
+          font-size:1.5rem;
+          letter-spacing:0.06em;
+          color:var(--gold);
+          line-height:1.3;
+        }
+        .tl-item:last-child .tl-year{color:var(--coral);}
+        .tl-title{
+          font-family:'Shippori Mincho',serif;
+          font-weight:600;
+          font-size:1.15rem;
+          color:var(--navy);
+          margin-top:0.1rem;
+        }
+        .tl-text{
+          font-family:'Noto Sans JP',sans-serif;
+          font-size:0.92rem;
+          line-height:1.9;
+          color:var(--slate);
+          margin-top:0.3rem;
+        }
+        .tl-item.reveal:nth-child(2){transition-delay:0.1s;}
+        .tl-item.reveal:nth-child(3){transition-delay:0.2s;}
+        .tl-item.reveal:nth-child(4){transition-delay:0.3s;}
 
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        /* ---------- MESSAGE ---------- */
+        .message{
+          background:linear-gradient(180deg, var(--plum), #eae0f0);
+        }
+        .message .eyebrow{margin-bottom:1.4rem;}
+        .message h2{
+          font-family:'Shippori Mincho',sans-serif;
+          font-weight:600;
+          font-size:clamp(1.8rem,4vw,2.6rem);
+          margin-bottom:2rem;
+          color:var(--navy);
+        }
+        .message p{
+          font-family:'Shippori Mincho',serif;
+          font-size:clamp(1.05rem,1.9vw,1.25rem);
+          line-height:2.1;
+          color:#1e293b;
+          margin-bottom:1.6rem;
+        }
 
-    const [y, m, d] = eventDateStr.split('-').map(Number);
-    const eventDate = new Date(y, m - 1, d);
+        .member-messages{
+          margin-top:3rem;
+        }
+        .member-message{
+          padding:2.4rem 0;
+          border-top:1px solid rgba(212,149,32,0.25);
+        }
+        .member-message:first-child{
+          border-top:1px solid rgba(212,149,32,0.25);
+        }
+        .member-name{
+          font-family:'Shippori Mincho',sans-serif;
+          letter-spacing:0.15em;
+          text-transform:uppercase;
+          color:var(--gold);
+          font-size:0.95rem;
+          margin-bottom:1rem;
+        }
+        .member-message p{
+          margin-bottom:0;
+          font-size:clamp(1rem,1.7vw,1.15rem);
+        }
+        .member-message .message-placeholder{
+          color:var(--slate);
+          font-style:italic;
+        }
+        .member-message .message-content{
+          display:none;
+        }
+        .member-message.is-published .message-placeholder{
+          display:none;
+        }
+        .member-message.is-published .message-content{
+          display:block;
+        }
 
-    const msPerDay = 24 * 60 * 60 * 1000;
-    const diffDays = Math.round((eventDate - today) / msPerDay);
+        .signature{
+          margin-top:3rem;
+          font-family:'Shippori Mincho',sans-serif;
+          letter-spacing:0.1em;
+          color:var(--gold);
+          text-align:right;
+          font-size:1.1rem;
+        }
 
-    if (diffDays > 0){
-      countdownEl.innerHTML = `引退公演まであと<span class="num">${diffDays}</span>日!!`;
-      countdownEl.classList.add('is-visible');
-    } else if (diffDays === 0){
-      countdownEl.textContent = 'いよいよ本日開催!!';
-      countdownEl.classList.add('is-visible');
-    }
-    // diffDays < 0（公演翌日以降）の場合は is-visible を付けないので非表示のまま
-  })();
+        /* ---------- INFO / TICKETS ---------- */
+        .info{
+          background:var(--cream);
+        }
+        .info-grid{
+          display:grid;
+          grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+          gap:1px;
+          background:rgba(212,149,32,0.25);
+          border:1px solid rgba(212,149,32,0.25);
+          margin-top:2.5rem;
+        }
+        .info-card{
+          background:var(--cream);
+          padding:2.2rem 1.8rem;
+        }
+        .info-card .label{
+          font-family:'Shippori Mincho',sans-serif;
+          font-size:0.72rem;
+          letter-spacing:0.25em;
+          text-transform:uppercase;
+          color:var(--coral);
+          margin-bottom:0.9rem;
+        }
+        .info-card .value{
+          font-family:'Shippori Mincho',sans-serif;
+          font-weight:500;
+          font-size:1.05rem;
+          color:var(--navy);
+          line-height:1.7;
+        }
+        .info-card .value small{
+          display:block;
+          color:var(--slate);
+          font-weight:300;
+          font-size:0.85rem;
+          margin-top:0.35rem;
+        }
 
-  /* ---------- メンバーメッセージ：公開日まで「お待ちください」表示 ----------
-     公開したい日になったら、下の messagePublishDateStr を書き換えてください。
-     その日の 0:00 になった瞬間から、実際のメッセージ本文が表示されます。
-     （それまでは全員「来たる日までお待ちください。」の表示のままです）
-  ---------- */
-  (function initMemberMessages(){
-    const messagePublishDateStr = '2026-11-15'; // ★メッセージを公開したい日にちに書き換えてください
-    const container = document.getElementById('memberMessages');
-    if (!container) return;
+        .ticket-cta{
+          margin-top:3rem;
+          display:flex;
+          flex-wrap:wrap;
+          align-items:center;
+          justify-content:space-between;
+          gap:1.6rem;
+          padding:2.4rem;
+          border:1px solid rgba(212,149,32,0.35);
+          background:rgba(212,149,32,0.04);
+        }
+        .ticket-cta p{
+          font-family:'Shippori Mincho',serif;
+          font-size:1.05rem;
+          color:var(--navy);
+        }
+        .ticket-cta .note{color:var(--slate); font-size:0.85rem; margin-top:0.4rem; font-family:'Noto Sans JP',sans-serif;}
+        .btn{
+          font-family:'Shippori Mincho',sans-serif;
+          letter-spacing:0.12em;
+          font-weight:600;
+          text-transform:uppercase;
+          font-size:0.95rem;
+          color:var(--cream);
+          background:var(--gold);
+          border:none;
+          padding:1rem 2.4rem;
+          cursor:pointer;
+          text-decoration:none;
+          white-space:nowrap;
+          transition:transform 0.25s ease, box-shadow 0.25s ease;
+          display:inline-block;
+        }
+        .btn:hover{
+          transform:translateY(-2px);
+          box-shadow:0 10px 24px -8px rgba(212,149,32,0.4);
+        }
 
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        /* ---------- SOCIAL LINKS ---------- */
+        .social-label{
+          margin-top:2.6rem;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          gap:0.6rem;
+          font-family:'Shippori Mincho',serif;
+          font-weight:600;
+          font-size:1.05rem;
+          letter-spacing:0.08em;
+          color:var(--navy);
+        }
+        .social-label::before,
+        .social-label::after{
+          content:"";
+          width:28px;
+          height:1px;
+          background:var(--gold);
+        }
+        .social-label .arrow{
+          display:inline-block;
+          color:var(--gold);
+          animation:bounce-down 1.6s ease-in-out infinite;
+        }
+        @keyframes bounce-down{
+          0%,100%{ transform:translateY(0); }
+          50%{ transform:translateY(4px); }
+        }
+        .social-links{
+          margin-top:1.2rem;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          gap:1.1rem;
+        }
+        .social-links a{
+          width:46px;
+          height:46px;
+          border-radius:50%;
+          border:1px solid rgba(212,149,32,0.35);
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          color:var(--navy);
+          background:var(--cream);
+          transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+        }
+        .social-links a svg{
+          width:20px;
+          height:20px;
+          fill:currentColor;
+        }
+        .social-links a:hover{
+          transform:translateY(-3px);
+          border-color:var(--gold);
+          color:var(--gold);
+          box-shadow:0 8px 18px -8px rgba(212,149,32,0.5);
+        }
 
-    const [y, m, d] = messagePublishDateStr.split('-').map(Number);
-    const publishDate = new Date(y, m - 1, d);
+        /* ---------- FOOTER ---------- */
+        footer{
+          padding:4rem 6vw 3rem;
+          text-align:center;
+          background:var(--cream);
+          border-top:1px solid rgba(0,0,0,0.06);
+        }
+        footer .team{
+          font-family:'Shippori Mincho',sans-serif;
+          letter-spacing:0.2em;
+          color:var(--slate);
+          font-size:0.85rem;
+          text-transform:uppercase;
+        }
+        footer .thanks{
+          margin-top:0.8rem;
+          font-family:'Shippori Mincho',serif;
+          color:var(--navy);
+          font-size:1rem;
+        }
 
-    if (today >= publishDate){
-      container.querySelectorAll('.member-message').forEach(el => {
-        el.classList.add('is-published');
-      });
-    }
-    // 公開日前は is-published が付かないので「来たる日までお待ちください。」のまま
-  })();
+        .reveal{
+          opacity:0;
+          transform:translateY(24px);
+          transition:opacity 0.9s ease, transform 0.9s ease;
+        }
+        .reveal.in-view{
+          opacity:1;
+          transform:translateY(0);
+        }
 
-  /* ---------- 目次（ナビゲーション）の開閉 ---------- */
-  (function initToc(){
-    const toggle = document.getElementById('tocToggle');
-    const closeBtn = document.getElementById('tocClose');
-    const panel = document.getElementById('tocPanel');
-    if (!toggle || !panel) return;
+        /* ---------- 目次（ナビゲーション） ---------- */
+        .toc-toggle{
+          position:fixed;
+          top:1.2rem;
+          right:1.2rem;
+          z-index:1000;
+          display:flex;
+          align-items:center;
+          gap:0.55rem;
+          height:48px;
+          padding:0 1.1rem 0 0.9rem;
+          border-radius:999px;
+          border:1.5px solid rgba(212,149,32,0.55);
+          background:rgba(255,255,255,0.95);
+          backdrop-filter:blur(6px);
+          cursor:pointer;
+          box-shadow:0 8px 20px -8px rgba(27,35,64,0.3);
+          transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .toc-toggle:hover{
+          transform:translateY(-2px);
+          border-color:var(--gold);
+          box-shadow:0 12px 24px -8px rgba(212,149,32,0.4);
+        }
+        .toc-toggle .bars{
+          display:flex;
+          flex-direction:column;
+          gap:4px;
+          width:20px;
+        }
+        .toc-toggle .bars span{
+          display:block;
+          width:20px;
+          height:2px;
+          border-radius:2px;
+          background:var(--navy);
+          transition:transform 0.3s ease, opacity 0.3s ease;
+        }
+        .toc-toggle.is-open .bars span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+        .toc-toggle.is-open .bars span:nth-child(2){opacity:0;}
+        .toc-toggle.is-open .bars span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+        .toc-toggle .toc-btn-text{
+          font-family:'Shippori Mincho',sans-serif;
+          font-weight:600;
+          letter-spacing:0.15em;
+          font-size:0.82rem;
+          color:var(--navy);
+        }
 
-    function openMenu(){
-      panel.classList.add('is-open');
-      toggle.classList.add('is-open');
-      toggle.setAttribute('aria-expanded', 'true');
-      toggle.setAttribute('aria-label', '目次を閉じる');
-    }
-    function closeMenu(){
-      panel.classList.remove('is-open');
-      toggle.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', '目次を開く');
-    }
-
-    toggle.addEventListener('click', () => {
-      panel.classList.contains('is-open') ? closeMenu() : openMenu();
-    });
-
-    if (closeBtn){
-      closeBtn.addEventListener('click', closeMenu);
-    }
-
-    // 背景（暗い部分）をクリックしたら閉じる
-    panel.addEventListener('click', (e) => {
-      if (e.target === panel) closeMenu();
-    });
-
-    // メニュー内のリンクをクリックしたら閉じる
-    const links = panel.querySelectorAll('a[data-section]');
-    links.forEach(a => {
-      a.addEventListener('click', closeMenu);
-    });
-
-    // Escキーで閉じる
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    // ---- 現在読んでいるセクションをメニュー上でハイライト ----
-    const sectionIds = ['top','about','rally','message','info','sns'];
-    const sectionEls = sectionIds
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
-
-    if (sectionEls.length){
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          const link = panel.querySelector(`a[data-section="${entry.target.id}"]`);
-          if (!link) return;
-          if (entry.isIntersecting){
-            links.forEach(a => a.classList.remove('is-current'));
-            link.classList.add('is-current');
+        .toc-panel{
+          position:fixed;
+          inset:0;
+          z-index:999;
+          background:rgba(27,23,40,0.6);
+          backdrop-filter:blur(2px);
+          opacity:0;
+          visibility:hidden;
+          transition:opacity 0.35s ease, visibility 0.35s ease;
+        }
+        .toc-panel.is-open{
+          opacity:1;
+          visibility:visible;
+        }
+        .toc-menu{
+          position:absolute;
+          top:0;
+          right:0;
+          height:100%;
+          width:min(340px,84vw);
+          background:linear-gradient(165deg,#ffffff 0%, #f7f5fa 55%, #f1eef7 100%);
+          box-shadow:-12px 0 32px -14px rgba(27,35,64,0.35);
+          padding:2rem 1.6rem 2.5rem;
+          display:flex;
+          flex-direction:column;
+          transform:translateX(100%);
+          transition:transform 0.4s cubic-bezier(.2,.7,.2,1);
+        }
+        .toc-panel.is-open .toc-menu{
+          transform:translateX(0);
+        }
+        .toc-menu-header{
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          margin-bottom:1.6rem;
+          padding-bottom:1.2rem;
+          border-bottom:1px solid rgba(212,149,32,0.3);
+        }
+        .toc-label{
+          font-family:'Shippori Mincho',sans-serif;
+          letter-spacing:0.28em;
+          text-transform:uppercase;
+          font-size:0.8rem;
+          color:var(--gold);
+          font-weight:600;
+        }
+        .toc-close{
+          width:38px;
+          height:38px;
+          border-radius:50%;
+          border:1px solid rgba(212,149,32,0.4);
+          background:#fff;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          cursor:pointer;
+          color:var(--navy);
+          font-size:1.1rem;
+          line-height:1;
+          transition:border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+        .toc-close:hover{
+          border-color:var(--gold);
+          color:var(--gold);
+          transform:rotate(90deg);
+        }
+        .toc-menu nav{
+          display:flex;
+          flex-direction:column;
+          gap:0.3rem;
+        }
+        .toc-menu a{
+          display:flex;
+          align-items:center;
+          gap:1rem;
+          padding:1rem 0.6rem;
+          border-radius:12px;
+          text-decoration:none;
+          color:var(--navy);
+          transition:background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+        }
+        .toc-menu a:hover{
+          background:rgba(212,149,32,0.08);
+          padding-left:0.9rem;
+        }
+        .toc-menu a.is-current{
+          background:rgba(212,149,32,0.12);
+        }
+        .toc-menu a.is-current .toc-num{
+          background:var(--gold);
+          color:#fff;
+        }
+        .toc-num{
+          flex:0 0 auto;
+          width:30px;
+          height:30px;
+          border-radius:50%;
+          border:1.5px solid rgba(212,149,32,0.5);
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-family:'Big Shoulders Display',sans-serif;
+          font-size:0.85rem;
+          color:var(--gold);
+          transition:background 0.2s ease, color 0.2s ease;
+        }
+        .toc-text{
+          display:flex;
+          flex-direction:column;
+          gap:0.15rem;
+        }
+        .toc-ja{
+          font-family:'Shippori Mincho',serif;
+          font-size:1.05rem;
+          letter-spacing:0.04em;
+        }
+        .toc-en{
+          font-family:'Big Shoulders Display',sans-serif;
+          font-size:0.68rem;
+          letter-spacing:0.14em;
+          color:var(--slate);
+          text-transform:uppercase;
+        }
+        .toc-menu-footer{
+          margin-top:auto;
+          padding-top:1.4rem;
+          text-align:center;
+          font-family:'Shippori Mincho',sans-serif;
+          font-size:0.72rem;
+          letter-spacing:0.12em;
+          color:var(--slate);
+        }
+        @media (max-width:380px){
+          .toc-toggle{
+            width:48px;
+            height:48px;
+            padding:0;
+            justify-content:center;
           }
-        });
-      }, { threshold: 0.4, rootMargin: '-10% 0px -10% 0px' });
-
-      sectionEls.forEach(el => sectionObserver.observe(el));
-    }
-  })();
-</script>
-
-</body>
+          .toc-toggle .toc-btn-text{display:none;}
+        }
+    </style>
+  </head>
+  <body>
+    <p>目次</p>
+    <p>Contents / 目次</p>
+    <p>✕</p>
+    <p>
+      <a href="#top" class="text-primary underline cursor-pointer">1トップTop</a>
+      <a href="#about" class="text-primary underline cursor-pointer">2Relay of RallyとはAbout</a>
+      <a href="#rally" class="text-primary underline cursor-pointer">3RallyについてCircle</a>
+      <a href="#history" class="text-primary underline cursor-pointer">4RallyヒストリーHistory</a>
+      <a href="#message" class="text-primary underline cursor-pointer">5メッセージMessage</a>
+      <a href="#info" class="text-primary underline cursor-pointer">6公演情報Info</a>
+      <a href="#sns" class="text-primary underline cursor-pointer">7公式SNSSNS</a>
+    </p>
+    <p>Relay of Rally 2026</p>
+    <p>
+      <br />
+      <img src="IMG_0153.webp" alt="Relay of Rally 2026 ロゴ" />
+    </p>
+    <p>Relay of Rally</p>
+    <p>2026</p>
+    <p>Scroll</p>
+    <p>Rally 3rd generation final Performance</p>
+    <h1 class="text-2xl font-bold">Relay of Rally2026</h1>
+    <p>跳び続けた日々に、ありがとう。</p>
+    <p>2026年12月12日(土)</p>
+    <p>メガネのイタガキ文化ホール伊勢崎</p>
+    <p>
+      <br />
+      <br data-lexical-managed-linebreak="true" />
+    </p>
+    <p>Scroll</p>
+    <p>
+      <br />
+      <br data-lexical-managed-linebreak="true" />
+    </p>
+    <p>About</p>
+    <h2 class="text-xl font-bold">Relay of Rallyとは！</h2>
+    <p>【Relay of Rallyについて】</p>
+    <p>
+      Relay of Rallyとは、2024年の12月8日を第1回目してに開催された群馬県内最大級のダブルダッチイベントです！ 第１回Relay
+      of Rallyは初開催でありながら、来場者数は、200人越えを記録しました。 「Relay of
+      Rally」は群馬県内でダブルダッチというスポーツの魅力を広めたいという思いから企画されました。
+      我々、群馬大学ダブルダッチサークル Rally含め、群馬県内で活躍する全てのダブルダッチプレーヤーが集まります。
+      また、大学生だけではなく、社会人の方や子どもたち、ゲストの方、そして観客の方と一体となって作り上げる公演会となっています。
+      群馬大学ダブルダッチサークルRallyに所属する現役生による引退公演です｡
+    </p>
+    <p>
+      「Relay」は、ダブルダッチをする人を増やし、次世代へとダブルダッチを繋ぐ。
+      「Rally」は、”集結”という意味を持つサークル名。
+      本公演を通じて、ダブルダッチを知っている人や初めて見る人を”集め”、”リレー”のようにダブルダッチを群馬で繋げていく事を目的とし、イベント名を「Relay
+      of Rally」と名付けました。
+      2026年、３代目の引退公演にして設立5周年となる節目の年に行われる今年の公演を、今年最上級生として頑張ってきた私たち３代目による最後のパフォーマンスをぜひご覧ください！
+    </p>
+    <p>私たちの活動の様子はこちらから！！↓</p>
+    <p><br /></p>
+    <p>
+      <br />
+      <br data-lexical-managed-linebreak="true" />
+    </p>
+    <p>Circle</p>
+    <h2 class="text-xl font-bold">Rallyについて</h2>
+    <p>【群馬大学ダブルダッチサークル Rally】</p>
+    <p>
+      群馬大学ダブルダッチサークルRallyは2022年に設立されました。
+      群馬県でダブルダッチの普及を目指し、様々なイベントにてパフォーマンス披露や体験会の開催などの活動をしてきました。
+      2024年、群馬県でのダブルダッチシーンをさらに盛り上げるために県内初となるダブルダッチパフォーマンス公演“Relay of
+      Rally"を開催いたしました。
+    </p>
+    <p>
+      普段の私たちは火曜日の18:00~21:00,土曜日の14:00~18:00に荒牧キャンパスで、水曜日の14:00~18:00に桐生キャンパスにて日々練習をしております。
+      また、月に一度開催される「Let's Play Double Dutch in 群馬」やアーバンスポーツフェス、HOTTESTにも参加しております！
+      私たちの活動に興味がある方は下のリンクから各種SNSに飛んでいただくと、私たちの活動を見ることができます！！
+    </p>
+    <p>私たちの活動の様子はこちらから！！↓</p>
+    <p><br /></p>
+    <p>
+      <br />
+      <br data-lexical-managed-linebreak="true" />
+    </p>
+    <p>History</p>
+    <h2 class="text-xl font-bold">Rallyヒストリー</h2>
+    <p>【跳び続けた軌跡】</p>
+    <ol>
+      <li value="1">
+        2020年4月
+        <br />
+        できごとのタイトル
+        <br />
+        ここに補足の説明を書きます。
+      </li>
+      <li value="2">
+        2022年9月
+        <br />
+        できごとのタイトル
+        <br />
+        ここに補足の説明を書きます。
+      </li>
+      <li value="3">
+        2024年3月
+        <br />
+        できごとのタイトル
+        <br />
+        ここに補足の説明を書きます。
+      </li>
+      <li value="4">
+        2026年
+        <br />
+        できごとのタイトル
+        <br />
+        ここに補足の説明を書きます。
+      </li>
+    </ol>
+    <p>
+      <br />
+      <br data-lexical-managed-linebreak="true" />
+    </p>
+    <p>Message for you</p>
+    <h2 class="text-xl font-bold">初代から続いた、俺たちのRally。この日を持って次世代へ。</h2>
+    <p>
+      3年間、群馬の風にも負けず、跳んできました。失敗続きの日も、息が合わなかった日も、ロープの音だけが正直に鳴っていました。
+    </p>
+    <p>【ひめな（hime）】</p>
+    <p>近日公開予定！来たる日までお待ちください！！</p>
+    <p>【メンバー1からのメッセージをここに入れてください。】</p>
+    <p>【るいと(ruito)】</p>
+    <p>近日公開予定！来たる日までお待ちください！！</p>
+    <p>【メンバー2からのメッセージをここに入れてください。】</p>
+    <p>【のどか】</p>
+    <p>近日公開予定！来たる日までお待ちください！！</p>
+    <p>【メンバー3からのメッセージをここに入れてください。】</p>
+    <p>【ひかり】</p>
+    <p>近日公開予定！来たる日までお待ちください！！</p>
+    <p>【メンバー1からのメッセージをここに入れてください。】</p>
+    <p>【しょうた（Sho-ta）】</p>
+    <p>近日公開予定！来たる日までお待ちください！！</p>
+    <p>
+      【まずはこれだけ言いたい。Rallyは良かったぞ。最後にこれだけ言わせてくれ！RallyはBIGLOVE…で最高のサークルだったぜ！！！】
+    </p>
+    <p>【3代目　Weeeeeek】一同</p>
+    <p>
+      <br />
+      <br data-lexical-managed-linebreak="true" />
+    </p>
+    <p>Performance Info</p>
+    <h2 class="text-xl font-bold">公演情報</h2>
+    <p>Date&amp;timetable</p>
+    <p>2026年12月12日(土)開場 12:30</p>
+    <p>開演 13:00</p>
+    <p>終演 16:00</p>
+    <p>Venue</p>
+    <p>メガネのイタガキ文化ホール伊勢崎【伊勢崎駅から徒歩24分、バスで9分】</p>
+    <p>【住所:〒372-0014 群馬県伊勢崎市昭和町3918】</p>
+    <p>Admission</p>
+    <p>入場無料ですが、事前予約もできます。こちらは12月5日までとなります。</p>
+    <p>
+      予約を希望される方は、下にあるインスタグラムに飛び、リンクの一番下にある予約フォームからご予約をお願いします！！
+    </p>
+    <p>Capacity</p>
+    <p>全席【指定/自由】【未定（〜494席）】</p>
+    <p>【入場無料でどなたでもご覧いただけます。当日は会場に直接お越しください!】</p>
+    <p>Relay of Rally 2026</p>
+    <p>3代目の３代目による最高で最後の舞台を皆様にお届けします！</p>
+    <p>皆様、当日は盛り上がっていきましょう！！</p>
+    <p>Rallyの公式SNSはこちらから！！↓</p>
+    <p><br /></p>
+  </body>
 </html>
